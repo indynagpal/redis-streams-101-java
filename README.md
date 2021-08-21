@@ -13,7 +13,7 @@ This is a first basic example that use a single consumer.
 
 ```
 
-### Run
+### Run with Redis
 
 Run the producer
 
@@ -29,4 +29,22 @@ Run the consumer
 > cd redis-streams-101-java
 
 > mvn exec:java -Dexec.mainClass="com.kanibl.redis.streams.simple.RedisStreams101Consumer"
+```
+
+### Run with Redis Sentinel
+
+Run the producer
+
+```
+> cd redis-streams-101-java
+
+> mvn exec:java -Dexec.mainClass="com.nagpals.redis.streams.RedisStreams101Producer" -Dexec.args="5"
+```
+
+Run the consumer
+
+```
+> cd redis-streams-101-java
+
+> mvn exec:java -Dexec.mainClass="com.nagpals.redis.streams.simple.RedisStreams101Consumer"
 ```
