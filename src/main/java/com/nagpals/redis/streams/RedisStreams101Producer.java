@@ -12,15 +12,15 @@ public class RedisStreams101Producer {
     public final static String STREAMS_KEY = "weather_sensor:wind";
 
     public static void main(String[] args) {
-
+        /* if we pass in commandline argument to send multiple messages, use that. else send 1 message */
         int iMessages = 1;
-
         if (args != null && args.length != 0 ) {
             iMessages = Integer.valueOf(args[0]);
         }
 
         System.out.println( String.format("\n Sending %s message(s)", iMessages));
 
+        /* build a URI that is then used for getting a connection */
         RedisURI redisURI = RedisURI.Builder
                 .sentinel("127.0.0.1", 26379, "str-redis")
                 .withSentinel("127.0.0.1", 26380)
