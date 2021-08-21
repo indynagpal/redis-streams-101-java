@@ -20,7 +20,7 @@ public class RedisStreams101Producer {
 
         System.out.println( String.format("\n Sending %s message(s)", iMessages));
 
-        /* build a URI that is then used for getting a connection */
+        /* build a URI that is then used for getting a connection. you'll have to pass in your sentinel ips and ports, along with the masterid */
         RedisURI redisURI = RedisURI.Builder
                 .sentinel("127.0.0.1", 26379, "str-redis")
                 .withSentinel("127.0.0.1", 26380)
